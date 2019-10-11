@@ -11,6 +11,7 @@ module.exports = function formatMsg (data) {
                     <CreateTime>${data.msgtime}</CreateTime>
                 </xml>
             `;
+            break;
 
         case 'image':
             return `
@@ -22,6 +23,7 @@ module.exports = function formatMsg (data) {
                     <Image><MediaId><![CDATA[${data.msg}]]></MediaId></Image>
                 </xml>
             `;
+            break;
             
         case 'voice':
             return ` 
@@ -33,6 +35,7 @@ module.exports = function formatMsg (data) {
                     <Voice><MediaId><![CDATA[${data.msg}]]></MediaId></Voice>
                 </xml>
             `;
+            break;
 
         case 'video':
             return `
@@ -47,6 +50,7 @@ module.exports = function formatMsg (data) {
                     </Video>
                 </xml>
             `;
+            break;
 
         default: 
             return `
@@ -54,9 +58,9 @@ module.exports = function formatMsg (data) {
                     <ToUserName><![CDATA[${data.touser}]]></ToUserName>
                     <FromUserName><![CDATA[${data.fromuser}]]></FromUserName>
                     <MsgType><![CDATA[text]]></MsgType>
-                    <Content><![CDATA[该类行不被支持]]></Content>
                     <CreateTime>${data.msgtime}</CreateTime>
                 </xml>
             `;
+            break;
     }
 };
